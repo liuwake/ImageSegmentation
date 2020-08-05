@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="18.11.1.1">
+<procedure name="main">
+<interface/>
+<body>
+<c>**** 黑白图像检测纸张和四个角点</c>
+<c>*** Init</c>
+<c></c>
+<l>dev_close_window ()</l>
+<l>PathImages := 'D:/WK/Hospital/实际采集图像'</l>
+<c></c>
+<l>read_image (Image, PathImages + '/BoxG2 (7).jpg')</l>
+<c></c>
+<l>dev_open_window_fit_image (Image, 110,110, -1, -1, WindowHandle)</l>
+<c></c>
+<l>dev_display (Image)</l>
+<c></c>
+<c></c>
+<c>*** Prog</c>
+<c>*对饱和度图像进行二值化</c>
+<c></c>
+<c>** Detecting Paper</c>
+<l>* auto_threshold (Saturation, Regions, 20)</l>
+<l>binary_threshold (Image, Region, 'max_separability', 'light', UsedThreshold)</l>
+<l>* threshold (Saturation, HighSaturation, 100, 255)</l>
+<l>fill_up_shape (Region, Paper, 'area', 1, 40000)</l>
+<c></c>
+<c>** Detecting Corner</c>
+<l>* inner_rectangle1 (Paper, Row1, Column1, Row2, Column2)</l>
+<l>* gen_rectangle1 (Rectangle, Row1, Column1, Row2, Column2)</l>
+<c>* </c>
+<c></c>
+<l>* smallest_circle (Paper, Row, Column, Radius)</l>
+<l>* disp_circle (WindowHandle, Row, Column, Radius)</l>
+<c></c>
+<l>dev_display (Region)</l>
+<l>* dev_display (ImageReduced)</l>
+<l>stop ()</l>
+<c></c>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+</hdevelop>
