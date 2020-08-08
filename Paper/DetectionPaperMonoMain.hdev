@@ -26,14 +26,25 @@
 <l>fill_up_shape (Region, Paper, 'area', 1, 40000)</l>
 <c></c>
 <c>** Detecting Corner</c>
-<l>* inner_rectangle1 (Paper, Row1, Column1, Row2, Column2)</l>
-<l>* gen_rectangle1 (Rectangle, Row1, Column1, Row2, Column2)</l>
-<c>* </c>
 <c></c>
-<l>* smallest_circle (Paper, Row, Column, Radius)</l>
-<l>* disp_circle (WindowHandle, Row, Column, Radius)</l>
+<l>Region_get_corner (Image, Paper, WindowHandle, Rows, Cols)</l>
+<l>dev_set_colored (12)</l>
+<l>for Index := 1 to 4 by 1</l>
+<l>    disp_circle(WindowHandle,Rows[Index],Cols[Index],64)</l>
+<l>endfor</l>
+<l>* disp_circle(WindowHandle,Rows,Cols,64)</l>
 <c></c>
-<l>dev_display (Region)</l>
+<c></c>
+<c></c>
+<l>* set_display_font (WindowHandle, 16, 'mono', 'true', 'false')</l>
+<l>* set_tposition (WindowHandle, Row, Column)</l>
+<l>* write_string (WindowHandle, 'Intesection Row:'+ Row +' Col'+ Column)</l>
+<l>* disp_message (WindowHandle, 'Intesection Row:'+ Row +'Col'+ Column, 'window', Row, Column, 'black', 'true')</l>
+<c></c>
+<c></c>
+<l>dev_set_colored (12)</l>
+<c></c>
+<l>* dev_display (RegionIntersection)</l>
 <l>* dev_display (ImageReduced)</l>
 <l>stop ()</l>
 <c></c>
