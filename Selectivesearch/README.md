@@ -1,0 +1,2 @@
+- [Selective Search for Object Detection (C++ / Python)](https://learnopencv.com/selective-search-for-object-detection-cpp-python/)
+- [选择性搜索-算法解析](https://selectivesearch.readthedocs.io/zh-cn/latest/%E9%80%89%E6%8B%A9%E6%80%A7%E6%90%9C%E7%B4%A2-%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/)
