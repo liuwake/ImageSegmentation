@@ -17,4 +17,6 @@
  1|图像分割|O
  2|
 
- ### 文献阅读
+### 文献阅读
+
+ - [一文概览主要语义分割网络：FCN,SegNet,U-Net...](https://www.cvmart.net/community/detail/752)原文[https://meetshah.dev/semantic-segmentation/deep-learning/pytorch/visdom/2017/06/01/semantic-segmentation-over-the-years](https://meetshah.dev/semantic-segmentation/deep-learning/pytorch/visdom/2017/06/01/semantic-segmentation-over-the-years)
